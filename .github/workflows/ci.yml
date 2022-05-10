@@ -18,5 +18,5 @@ jobs:
     - name: lint
       uses: ghe-actions/dockerfile-validator@v1
       with:
-        dockerfile: 'Dockerfile'
+        dockerfile: 'debian11/Dockerfile'
         lint: 'hadolint'
