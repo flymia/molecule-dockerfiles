@@ -1,3 +1,5 @@
+![Workflow CI status](https://github.com/flymia/molecule-dockerfiles/actions/workflows/ci.yml/badge.svg)
+
 # molecule-dockerfiles
 
 These two Dockerfiles are used to create Docker images, which can be used to test Ansible roles using a tool called "molecule". The problem is, that Docker images usually don't include systemd, which you need for testing some roles. So these two images here provide a Debian 11 and RockyLinux 8 with systemd, which can be used to testing with molecule.
