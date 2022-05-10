@@ -25,6 +25,8 @@ jobs:
     name: Build Docker Image
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@master
     - name: Build Debian Image
       run: docker build . --tag ventor/docker-debian11-ansible:cibuild
       working-directory: debian11
