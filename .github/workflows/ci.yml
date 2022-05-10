@@ -26,4 +26,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Build Debian Image
-      run: docker build . --file debian11/Dockerfile --tag ventor/docker-debian11-ansible:cibuild
+      run: docker build debian11/Dockerfile --tag ventor/docker-debian11-ansible:cibuild
