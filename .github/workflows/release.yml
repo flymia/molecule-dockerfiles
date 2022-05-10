@@ -1,0 +1,6 @@
+name: Docker Push to Hub
+
+'on':
+  push:
+    tags:
+      - '*'
