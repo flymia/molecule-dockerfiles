@@ -5,7 +5,8 @@ name: Docker File CI
   push:
     branches:
       - main
-
+    paths-ignore:
+      - '**/README.md'
 jobs:
 
   lint:
