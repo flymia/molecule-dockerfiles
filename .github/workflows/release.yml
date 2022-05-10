@@ -13,8 +13,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: lint
+    - name: Lint Debian Image
       uses: ghe-actions/dockerfile-validator@v1
       with:
         dockerfile: 'debian11/Dockerfile'
         lint: 'hadolint'
+    - name: Build Debian Image
+      run: docker build . --file debian11/Dockerfile --tag ventor/docker-debian11-ansible:cibuild
