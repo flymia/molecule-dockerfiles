@@ -20,3 +20,10 @@ jobs:
       with:
         dockerfile: 'debian11/Dockerfile'
         lint: 'hadolint'
+
+  build-image:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build Debian Image
+      run: docker build . --file debian11/Dockerfile --tag ventor/docker-debian11-ansible:cibuild
