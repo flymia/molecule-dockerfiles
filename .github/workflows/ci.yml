@@ -9,23 +9,23 @@ name: Docker File CI
       - '**/README.md'
 jobs:
 
-  lint:
-    name: Lint Dockerfile
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: Lint debian11
-      uses: ghe-actions/dockerfile-validator@v1
-      with:
-        dockerfile: 'debian11/Dockerfile'
-        lint: 'hadolint'
-    - name: Lint rockylinux8
-      uses: ghe-actions/dockerfile-validator@v1
-      with:
-        dockerfile: 'rockylinux8/Dockerfile'
-        lint: 'hadolint'
+  #lint:
+    #name: Lint Dockerfile
+    #runs-on: ubuntu-latest
+#
+    #steps:
+    #- name: Checkout
+      #uses: actions/checkout@master
+    #- name: Lint debian11
+      #uses: ghe-actions/dockerfile-validator@v1
+      #with:
+        #dockerfile: 'debian11/Dockerfile'
+        #lint: 'hadolint'
+    #- name: Lint rockylinux8
+      #uses: ghe-actions/dockerfile-validator@v1
+      #with:
+        #dockerfile: 'rockylinux8/Dockerfile'
+        #lint: 'hadolint'
 
   build-image:
     name: Build Docker Image
@@ -36,6 +36,9 @@ jobs:
     - name: Build Debian Image
       run: docker build . --tag ventor/docker-debian11-ansible:cibuild
       working-directory: debian11
-    - name: Build RockyLinux Image
+    - name: Build RockyLinux8 Image
       run: docker build . --tag ventor/docker-rockylinux8-ansible:cibuild
       working-directory: rockylinux8
+    - name: Build RockyLinux9 Image
+      run: docker build . --tag ventor/docker-rockylinux9-ansible:cibuild
+      working-directory: rockylinux9
